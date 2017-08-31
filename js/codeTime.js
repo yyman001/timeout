@@ -119,7 +119,7 @@ var codeTime = {
 			me.localStorage.setItem('time_state', 'play');
 		}
 
-		if (typeof goOnTimeout !== 'undefined' && typeof goOnTimeout !== null && goOnTimeout > 0) {
+		if (typeof goOnTimeout !== 'undefined' && goOnTimeout !== null && goOnTimeout > 0) {
 			me.times = goOnTimeout;
 		} else {
 			me.times = me.option.times;
@@ -168,7 +168,7 @@ var codeTime = {
 	goOnTimeout: function () { //刷新后继续倒计时
 		var time = this.localStorage.getItem('time_out');
 		console.log('1-time_out:', time);
-		if (typeof time !== 'undefined' && typeof time !== null) {
+		if (typeof time !== 'undefined' && time !== null) {
 			this.code(parseInt(time, 10));
 		} else {
 			this.code(this.initTimes);
@@ -182,15 +182,15 @@ var codeTime = {
 	}
 	, init: function (optionObj) {
 		var me = this;
-		if (typeof optionObj !== null) {
+		if (optionObj !== null) {
 			for (d in optionObj) {
-				if (typeof optionObj[d] !== null && typeof optionObj[d] !== 'undefined') {
+				if (optionObj[d] !== null && typeof optionObj[d] !== 'undefined') {
 					me.option[d] = optionObj[d];
 				}
 			}
 		}
 
-		if (typeof window.localStorage.setItem !== 'undefined' && typeof window.localStorage.setItem !== null) {
+		if (typeof window.localStorage.setItem !== 'undefined' && window.localStorage.setItem !== null) {
 			me.localStorage = window.localStorage;
 			me.hasLocalStorage = true;
 		}
@@ -199,11 +199,9 @@ var codeTime = {
 			me.goOnTimeout();
 		} else {
 			console.log('optionObj.times:', optionObj.times);
-			console.log('optionObj.times2:', typeof optionObj.times === 'undefined' || typeof optionObj.times === null || parseInt(optionObj.times, 10) < 0);
-			if (typeof optionObj.times === 'undefined' || typeof optionObj.times === null || parseInt(optionObj.times, 10) < 0) {
-				// this.setTimes(parseInt(me.times, 10));
+			// console.log('optionObj.times2:', typeof optionObj.times === 'undefined' || typeof optionObj.times === null || parseInt(optionObj.times, 10) < 0);
+			if (typeof optionObj.times === 'undefined' || optionObj.times === null || parseInt(optionObj.times, 10) < 0) {
 				// optionObj.times = me.times;
-				console.log('wtf');
 				console.log('wtf');
 				me.option.times = me.initTimes;
 			}
