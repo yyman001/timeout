@@ -1,0 +1,19 @@
+{
+  "name": "timeout",
+  "version": "1.0.0",
+  "description": "timeout for localStorage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yyman001/timeout.git"
+  },
+  "author": "yyman001 <yyman001@qq.com> (https://github.com/yyman001)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yyman001/timeout/issues"
+  },
+  "homepage": "https://github.com/yyman001/timeout#readme"
+}
